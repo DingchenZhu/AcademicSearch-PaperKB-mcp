@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "academic-search-paperkb-mcp"
+version = "0.1.0"
+description = "Academic search + paper knowledge base via MCP"
+requires-python = ">=3.10"
+dependencies = [
+    # MCP
+    "mcp[cli]>=1.0.0",
+    # HTTP & async
+    "httpx>=0.27.0",
+    "anyio>=4.0.0",
+    # Data validation
+    "pydantic>=2.5.0",
+    # PDF parsing
+    "pymupdf>=1.24.0",
+    # Embedding / LLM clients
+    "openai>=1.30.0",
+    # Vector search (V1 linear, V2 FAISS)
+    "numpy>=1.26.0",
+    # Optional REST API
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.29.0",
+    # Utilities
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.3.0",
+]
+
+[project.optional-dependencies]
+faiss = ["faiss-cpu>=1.8.0"]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-httpx>=0.30.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+academic-search-server = "src.servers.academic_search_server:main"
+paper-kb-server        = "src.servers.paper_kb_server:main"
+rest-api-server        = "src.api.app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

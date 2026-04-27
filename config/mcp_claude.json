@@ -1,0 +1,13 @@
+{
+  "_comment": "Claude Code / Claude Desktop MCP server config. Run 'claude mcp add' or paste into ~/.claude/mcp.json.",
+  "mcpServers": {
+    "AcademicSearch": {
+      "type": "http",
+      "url": "http://localhost:9001/mcp"
+    },
+    "PaperKB": {
+      "type": "http",
+      "url": "http://localhost:9002/mcp"
+    }
+  }
+}

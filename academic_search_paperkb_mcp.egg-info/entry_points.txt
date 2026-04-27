@@ -1,0 +1,4 @@
+[console_scripts]
+academic-search-server = src.servers.academic_search_server:main
+paper-kb-server = src.servers.paper_kb_server:main
+rest-api-server = src.api.app:main

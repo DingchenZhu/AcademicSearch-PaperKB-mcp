@@ -1,0 +1,11 @@
+{
+  "_comment": "Cursor / VS Code MCP config. Copy to ~/.cursor/mcp.json or .cursor/mcp.json in your project.",
+  "mcpServers": {
+    "AcademicSearch": {
+      "url": "http://localhost:9001/mcp"
+    },
+    "PaperKB": {
+      "url": "http://localhost:9002/mcp"
+    }
+  }
+}
