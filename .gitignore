@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Environment variables — NEVER commit real keys
+.env
+.env.local
+.env.*.local
+
+# Project data (SQLite DB, PDF cache, FAISS index)
+data/
+*.sqlite
+*.sqlite3
+*.faiss
+
+# Test / coverage artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
